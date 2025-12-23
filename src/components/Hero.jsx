@@ -1,13 +1,20 @@
 export default function Hero() {
   return (
-    <div className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+    <div className="relative flex items-center justify-center overflow-hidden" style={{minHeight: '100vh'}}>
+      {/* Background Image - Full coverage */}
       <div
-        className="absolute inset-0 z-0"
+        className="absolute z-0"
         style={{
           backgroundImage: 'url(/images/brand/background.%20png.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: '100vw',
+          height: '100vh',
         }}
       >
         {/* Overlay for text readability */}
