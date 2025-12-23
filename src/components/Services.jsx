@@ -8,7 +8,7 @@ export default function Services() {
       id: 1,
       title: 'Digital Foundation & Websites',
       titleEs: 'Fundación Digital y Sitios Web',
-      icon: '🌐',
+      icon: '/images/brand/ansteia-circle.png',
       color: '#4FA5A5', // Turquoise
       description: 'Your professional presence, built right',
       descriptionEs: 'Tu presencia profesional, bien construida',
@@ -29,8 +29,8 @@ export default function Services() {
       id: 2,
       title: 'Automation & AI Systems',
       titleEs: 'Automatización y Sistemas de IA',
-      icon: '⚙️',
-      color: '#3A7B7F', // Deep Teal
+      icon: '/images/brand/ansteia-droplet.png',
+      color: '#7B8FA5', // Soft Blue-Gray
       description: 'Get your time back with intelligent workflows',
       descriptionEs: 'Recupera tu tiempo con flujos de trabajo inteligentes',
       features: [
@@ -50,7 +50,7 @@ export default function Services() {
       id: 3,
       title: 'Marketing & Creative Services',
       titleEs: 'Marketing y Servicios Creativos',
-      icon: '✨',
+      icon: '/images/brand/ansteia-triangle.png',
       color: '#C5A5A5', // Dusty Rose
       description: 'Content and campaigns that connect',
       descriptionEs: 'Contenido y campañas que conectan',
@@ -104,12 +104,20 @@ export default function Services() {
             >
               {/* Icon */}
               <div
-                className="text-6xl mb-6 transition-transform duration-300"
+                className="mb-6 transition-transform duration-300 flex justify-center"
                 style={{
                   transform: hoveredCard === service.id ? 'scale(1.2)' : 'scale(1)'
                 }}
               >
-                {service.icon}
+                <img
+                  src={service.icon}
+                  alt={service.title}
+                  className={
+                    service.id === 2 ? "w-32 h-32 object-contain" :
+                    service.id === 3 ? "w-28 h-28 object-contain" :
+                    "w-24 h-24 object-contain"
+                  }
+                />
               </div>
 
               {/* Title */}
@@ -166,10 +174,16 @@ export default function Services() {
         {/* Who We Serve Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-24">
           <div
-            className="rounded-2xl p-10 text-center"
+            className="rounded-2xl px-10 py-8 text-center"
             style={{backgroundColor: 'white', boxShadow: '0 4px 6px rgba(0,0,0,0.05)'}}
           >
-            <div className="text-5xl mb-4">👩‍💼</div>
+            <div className="flex justify-center mb-6">
+              <img
+                src="/images/brand/vesica-piscis.png"
+                alt="For Women Entrepreneurs"
+                className="w-32 h-32 object-contain"
+              />
+            </div>
             <h3 className="text-2xl font-bold mb-4" style={{color: '#5B6F7F'}}>
               For Women Entrepreneurs
             </h3>
@@ -179,10 +193,16 @@ export default function Services() {
           </div>
 
           <div
-            className="rounded-2xl p-10 text-center"
+            className="rounded-2xl px-10 py-8 text-center"
             style={{backgroundColor: 'white', boxShadow: '0 4px 6px rgba(0,0,0,0.05)'}}
           >
-            <div className="text-5xl mb-4">🏢</div>
+            <div className="flex justify-center mb-6">
+              <img
+                src="/images/brand/small-business.png"
+                alt="For Small Businesses"
+                className="w-32 h-32 object-contain"
+              />
+            </div>
             <h3 className="text-2xl font-bold mb-4" style={{color: '#5B6F7F'}}>
               For Small Businesses
             </h3>
