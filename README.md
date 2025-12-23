@@ -24,30 +24,30 @@ A modern, bilingual (English/Spanish) website for ANSTEIA - a tech automation an
 ## Development
 
 ### Install Dependencies
-\`\`\`bash
+```bash
 npm install
-\`\`\`
+```
 
 ### Run Development Server
-\`\`\`bash
+```bash
 npm run dev
-\`\`\`
+```
 
 The site will be available at `http://localhost:5173`
 
 ### Build for Production
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ### Preview Production Build
-\`\`\`bash
+```bash
 npm run preview
-\`\`\`
+```
 
 ## Project Structure
 
-\`\`\`
+```
 ansteia-website-2025/
 ├── public/
 │   └── images/
@@ -60,7 +60,7 @@ ansteia-website-2025/
 │   ├── App.jsx            # Main app component
 │   └── index.css          # Global styles
 └── README.md
-\`\`\`
+```
 
 ## Features
 
