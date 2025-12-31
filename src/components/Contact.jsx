@@ -48,18 +48,18 @@ export default function Contact() {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Beautiful overlay for readability */}
+      {/* Dark overlay for dark theme */}
       <div className="absolute inset-0" style={{
-        background: 'linear-gradient(135deg, rgba(245, 240, 232, 0.95) 0%, rgba(245, 240, 232, 0.92) 50%, rgba(197, 165, 165, 0.15) 100%)'
+        background: 'linear-gradient(135deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.88) 50%, rgba(0, 0, 0, 0.90) 100%)'
       }}></div>
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-4" style={{color: '#5B6F7F'}}>
+          <h2 className="text-4xl sm:text-5xl font-bold mb-4" style={{color: '#FFFFFF'}}>
             Let's Work Together
           </h2>
-          <p className="text-xl" style={{color: '#5B6F7F', opacity: 0.8}}>
+          <p className="text-xl" style={{color: '#E0E0E0', opacity: 0.9}}>
             Ready to reclaim your time? We'd love to hear from you.
           </p>
         </div>
@@ -67,16 +67,16 @@ export default function Contact() {
         <div className="grid md:grid-cols-2 gap-12">
           {/* Contact Form */}
           <div className="rounded-3xl shadow-2xl p-8 backdrop-blur-sm" style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.85)',
-            border: '1px solid rgba(197, 165, 165, 0.2)'
+            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+            border: '1px solid rgba(255, 255, 255, 0.1)'
           }}>
-            <h3 className="text-2xl font-bold mb-6" style={{color: '#5B6F7F'}}>
+            <h3 className="text-2xl font-bold mb-6" style={{color: '#FFFFFF'}}>
               Send us a message
             </h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-semibold mb-2" style={{color: '#5B6F7F'}}>
+                <label htmlFor="name" className="block text-sm font-semibold mb-2" style={{color: '#E0E0E0'}}>
                   Your Name *
                 </label>
                 <input
@@ -86,14 +86,14 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-turquoise transition-colors"
-                  style={{borderColor: '#B5C5B5'}}
+                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none transition-colors"
+                  style={{borderColor: 'rgba(255, 255, 255, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#FFFFFF'}}
                   placeholder="Jane Smith"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold mb-2" style={{color: '#5B6F7F'}}>
+                <label htmlFor="email" className="block text-sm font-semibold mb-2" style={{color: '#E0E0E0'}}>
                   Email Address *
                 </label>
                 <input
@@ -103,14 +103,14 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-turquoise transition-colors"
-                  style={{borderColor: '#B5C5B5'}}
+                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none transition-colors"
+                  style={{borderColor: 'rgba(255, 255, 255, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#FFFFFF'}}
                   placeholder="jane@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-semibold mb-2" style={{color: '#5B6F7F'}}>
+                <label htmlFor="subject" className="block text-sm font-semibold mb-2" style={{color: '#E0E0E0'}}>
                   Subject *
                 </label>
                 <input
@@ -120,14 +120,14 @@ export default function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-turquoise transition-colors"
-                  style={{borderColor: '#B5C5B5'}}
+                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none transition-colors"
+                  style={{borderColor: 'rgba(255, 255, 255, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#FFFFFF'}}
                   placeholder="Discovery Call Request"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-semibold mb-2" style={{color: '#5B6F7F'}}>
+                <label htmlFor="message" className="block text-sm font-semibold mb-2" style={{color: '#E0E0E0'}}>
                   Message *
                 </label>
                 <textarea
@@ -137,8 +137,8 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows="5"
-                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none focus:border-turquoise transition-colors resize-none"
-                  style={{borderColor: '#B5C5B5'}}
+                  className="w-full px-4 py-3 rounded-lg border-2 focus:outline-none transition-colors resize-none"
+                  style={{borderColor: 'rgba(255, 255, 255, 0.2)', backgroundColor: 'rgba(255, 255, 255, 0.05)', color: '#FFFFFF'}}
                   placeholder="Tell us about your project..."
                 ></textarea>
               </div>
@@ -159,10 +159,10 @@ export default function Contact() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold mb-6" style={{color: '#5B6F7F'}}>
+              <h3 className="text-2xl font-bold mb-6" style={{color: '#FFFFFF'}}>
                 Direct Contact
               </h3>
-              <p className="mb-8" style={{color: '#5B6F7F', opacity: 0.8}}>
+              <p className="mb-8" style={{color: '#E0E0E0', opacity: 0.9}}>
                 Prefer to reach out directly? Choose your preferred method below.
               </p>
             </div>
@@ -170,7 +170,7 @@ export default function Contact() {
             {/* Email Contacts */}
             <div className="space-y-4">
               <div className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 backdrop-blur-sm" style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(197, 165, 165, 0.3)'
               }}>
                 <div className="flex items-start space-x-4">
@@ -182,7 +182,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1" style={{color: '#5B6F7F'}}>Adriana</h4>
+                    <h4 className="font-semibold mb-1" style={{color: '#FFFFFF'}}>Adriana</h4>
                     <a href="mailto:adriana@ansteia.com" className="hover:underline" style={{color: '#4FA5A5'}}>
                       adriana@ansteia.com
                     </a>
@@ -191,7 +191,7 @@ export default function Contact() {
               </div>
 
               <div className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 backdrop-blur-sm" style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(232, 197, 213, 0.4)'
               }}>
                 <div className="flex items-start space-x-4">
@@ -203,7 +203,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1" style={{color: '#5B6F7F'}}>Nicole</h4>
+                    <h4 className="font-semibold mb-1" style={{color: '#FFFFFF'}}>Nicole</h4>
                     <a href="mailto:nicole@ansteia.com" className="hover:underline" style={{color: '#4FA5A5'}}>
                       nicole@ansteia.com
                     </a>
@@ -212,7 +212,7 @@ export default function Contact() {
               </div>
 
               <div className="rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all transform hover:scale-105 backdrop-blur-sm" style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.8)',
+                backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 border: '1px solid rgba(79, 165, 165, 0.3)'
               }}>
                 <div className="flex items-start space-x-4">
@@ -224,7 +224,7 @@ export default function Contact() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold mb-1" style={{color: '#5B6F7F'}}>General Inquiries</h4>
+                    <h4 className="font-semibold mb-1" style={{color: '#FFFFFF'}}>General Inquiries</h4>
                     <a href="mailto:info@ansteia.com" className="hover:underline" style={{color: '#4FA5A5'}}>
                       info@ansteia.com
                     </a>
@@ -235,16 +235,16 @@ export default function Contact() {
 
             {/* Response Time */}
             <div className="rounded-2xl p-6 backdrop-blur-sm shadow-lg" style={{
-              backgroundColor: 'rgba(255, 255, 255, 0.75)',
-              border: '2px solid rgba(181, 197, 181, 0.5)'
+              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              border: '2px solid rgba(79, 165, 165, 0.3)'
             }}>
               <div className="flex items-start space-x-3">
                 <svg className="w-6 h-6 flex-shrink-0 mt-1" style={{color: '#4FA5A5'}} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <div>
-                  <h4 className="font-semibold mb-2" style={{color: '#5B6F7F'}}>Response Time</h4>
-                  <p className="text-sm" style={{color: '#5B6F7F', opacity: 0.7}}>
+                  <h4 className="font-semibold mb-2" style={{color: '#FFFFFF'}}>Response Time</h4>
+                  <p className="text-sm" style={{color: '#E0E0E0', opacity: 0.8}}>
                     We typically respond within 24-48 hours during business days.
                   </p>
                 </div>

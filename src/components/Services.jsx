@@ -70,7 +70,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-32 px-4 relative overflow-hidden" style={{backgroundColor: '#F5F0E8'}}>
+    <section id="services" className="py-32 px-4 relative overflow-hidden" style={{backgroundColor: '#000000'}}>
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 rounded-full blur-3xl opacity-10" style={{backgroundColor: '#4FA5A5'}}></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 rounded-full blur-3xl opacity-10" style={{backgroundColor: '#C5A5A5'}}></div>
@@ -78,10 +78,10 @@ export default function Services() {
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Section Header */}
         <div className="text-center mb-20">
-          <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{color: '#5B6F7F'}}>
+          <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{color: '#FFFFFF'}}>
             How We Help You Grow
           </h2>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{color: '#5B6F7F', opacity: 0.8}}>
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto" style={{color: '#E0E0E0', opacity: 0.8}}>
             Three core pillars, one mission: give you freedom
           </p>
         </div>
@@ -93,11 +93,11 @@ export default function Services() {
               key={service.id}
               className="relative rounded-2xl p-8 transition-all duration-500 transform hover:-translate-y-2 cursor-pointer"
               style={{
-                backgroundColor: hoveredCard === service.id ? service.color : 'white',
+                backgroundColor: hoveredCard === service.id ? service.color : 'rgba(255, 255, 255, 0.05)',
                 boxShadow: hoveredCard === service.id
-                  ? '0 20px 40px rgba(0,0,0,0.15)'
-                  : '0 4px 6px rgba(0,0,0,0.05)',
-                border: `2px solid ${hoveredCard === service.id ? service.color : 'rgba(91, 111, 127, 0.1)'}`
+                  ? '0 20px 40px rgba(0,0,0,0.3)'
+                  : '0 4px 6px rgba(0,0,0,0.2)',
+                border: `2px solid ${hoveredCard === service.id ? service.color : 'rgba(255, 255, 255, 0.1)'}`
               }}
               onMouseEnter={() => setHoveredCard(service.id)}
               onMouseLeave={() => setHoveredCard(null)}
@@ -124,7 +124,7 @@ export default function Services() {
               <h3
                 className="text-2xl font-bold mb-4 transition-colors duration-300"
                 style={{
-                  color: hoveredCard === service.id ? 'white' : '#5B6F7F'
+                  color: hoveredCard === service.id ? 'white' : '#FFFFFF'
                 }}
               >
                 {service.title}
@@ -134,7 +134,7 @@ export default function Services() {
               <p
                 className="text-lg mb-6 transition-colors duration-300"
                 style={{
-                  color: hoveredCard === service.id ? 'rgba(255,255,255,0.9)' : 'rgba(91, 111, 127, 0.7)'
+                  color: hoveredCard === service.id ? 'rgba(255,255,255,0.9)' : 'rgba(255, 255, 255, 0.7)'
                 }}
               >
                 {service.description}
@@ -147,7 +147,7 @@ export default function Services() {
                     key={idx}
                     className="flex items-start transition-colors duration-300"
                     style={{
-                      color: hoveredCard === service.id ? 'rgba(255,255,255,0.95)' : '#5B6F7F'
+                      color: hoveredCard === service.id ? 'rgba(255,255,255,0.95)' : 'rgba(255, 255, 255, 0.8)'
                     }}
                   >
                     <span className="mr-2 mt-1">•</span>
@@ -175,7 +175,7 @@ export default function Services() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-24">
           <div
             className="rounded-2xl px-10 py-8 text-center"
-            style={{backgroundColor: 'white', boxShadow: '0 4px 6px rgba(0,0,0,0.05)'}}
+            style={{backgroundColor: 'rgba(255, 255, 255, 0.05)', boxShadow: '0 4px 6px rgba(0,0,0,0.2)', border: '1px solid rgba(255, 255, 255, 0.1)'}}
           >
             <div className="flex justify-center mb-6">
               <img
@@ -184,17 +184,17 @@ export default function Services() {
                 className="w-32 h-32 object-contain"
               />
             </div>
-            <h3 className="text-2xl font-bold mb-4" style={{color: '#5B6F7F'}}>
+            <h3 className="text-2xl font-bold mb-4" style={{color: '#FFFFFF'}}>
               For Women Entrepreneurs
             </h3>
-            <p style={{color: 'rgba(91, 111, 127, 0.8)'}}>
+            <p style={{color: 'rgba(255, 255, 255, 0.7)'}}>
               We're passionate about empowering women-led businesses with the technology and creative support needed to thrive.
             </p>
           </div>
 
           <div
             className="rounded-2xl px-10 py-8 text-center"
-            style={{backgroundColor: 'white', boxShadow: '0 4px 6px rgba(0,0,0,0.05)'}}
+            style={{backgroundColor: 'rgba(255, 255, 255, 0.05)', boxShadow: '0 4px 6px rgba(0,0,0,0.2)', border: '1px solid rgba(255, 255, 255, 0.1)'}}
           >
             <div className="flex justify-center mb-6">
               <img
@@ -203,10 +203,10 @@ export default function Services() {
                 className="w-32 h-32 object-contain"
               />
             </div>
-            <h3 className="text-2xl font-bold mb-4" style={{color: '#5B6F7F'}}>
+            <h3 className="text-2xl font-bold mb-4" style={{color: '#FFFFFF'}}>
               For Small Businesses
             </h3>
-            <p style={{color: 'rgba(91, 111, 127, 0.8)'}}>
+            <p style={{color: 'rgba(255, 255, 255, 0.7)'}}>
               Growing businesses need smart systems. We help entrepreneurs scale without losing their minds.
             </p>
           </div>
@@ -214,7 +214,7 @@ export default function Services() {
 
         {/* Why ANSTEIA Section */}
         <div className="mt-24">
-          <h3 className="text-4xl font-bold text-center mb-12" style={{color: '#5B6F7F'}}>
+          <h3 className="text-4xl font-bold text-center mb-12" style={{color: '#FFFFFF'}}>
             Why ANSTEIA?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -227,7 +227,7 @@ export default function Services() {
               <div
                 key={idx}
                 className="text-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
-                style={{backgroundColor: 'rgba(255,255,255,0.5)'}}
+                style={{backgroundColor: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255, 255, 255, 0.1)'}}
               >
                 <div className="flex justify-center mb-4">
                   <img
@@ -236,8 +236,8 @@ export default function Services() {
                     className="w-24 h-24 object-contain"
                   />
                 </div>
-                <h4 className="font-bold text-lg mb-2" style={{color: '#5B6F7F'}}>{item.title}</h4>
-                <p className="text-sm" style={{color: 'rgba(91, 111, 127, 0.7)'}}>{item.desc}</p>
+                <h4 className="font-bold text-lg mb-2" style={{color: '#FFFFFF'}}>{item.title}</h4>
+                <p className="text-sm" style={{color: 'rgba(255, 255, 255, 0.7)'}}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -245,17 +245,19 @@ export default function Services() {
 
         {/* CTA Section */}
         <div className="text-center mt-24">
-          <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{color: '#5B6F7F'}}>
+          <h3 className="text-4xl md:text-5xl font-bold mb-6" style={{color: '#FFFFFF'}}>
             Ready to reclaim your time?
           </h3>
           <a
             href="#contact"
             className="inline-block px-10 py-5 rounded-lg font-bold text-xl transition-all duration-300 transform hover:scale-105"
             style={{
-              backgroundColor: '#3A7B7F',
+              backgroundColor: '#4FA5A5',
               color: 'white',
-              boxShadow: '0 4px 20px rgba(58, 123, 127, 0.3)'
+              boxShadow: '0 4px 20px rgba(79, 165, 165, 0.3)'
             }}
+            onMouseEnter={(e) => e.target.style.backgroundColor = '#3A7B7F'}
+            onMouseLeave={(e) => e.target.style.backgroundColor = '#4FA5A5'}
           >
             Get Started
           </a>
