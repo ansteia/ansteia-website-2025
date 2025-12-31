@@ -219,17 +219,23 @@ export default function Services() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: '🌍', title: 'Trilingual Service', desc: 'EN / ES / PT' },
-              { icon: '🎨', title: 'Tech + Creative', desc: 'Best of both worlds' },
-              { icon: '⏰', title: 'Time-Saving Focus', desc: 'Your freedom matters' },
-              { icon: '🤝', title: 'Human + AI', desc: 'Smart collaboration' }
+              { image: '/images/brand/trilingual-services.png', title: 'Trilingual Service', desc: 'EN / ES / PT' },
+              { image: '/images/brand/tech-and-creative.png', title: 'Tech + Creative', desc: 'Best of both worlds' },
+              { image: '/images/brand/time-saving.png', title: 'Time-Saving Focus', desc: 'Your freedom matters' },
+              { image: '/images/brand/human-ai.png', title: 'Human + AI', desc: 'Smart collaboration' }
             ].map((item, idx) => (
               <div
                 key={idx}
                 className="text-center p-6 rounded-xl transition-all duration-300 hover:scale-105"
                 style={{backgroundColor: 'rgba(255,255,255,0.5)'}}
               >
-                <div className="text-4xl mb-3">{item.icon}</div>
+                <div className="flex justify-center mb-4">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-24 h-24 object-contain"
+                  />
+                </div>
                 <h4 className="font-bold text-lg mb-2" style={{color: '#5B6F7F'}}>{item.title}</h4>
                 <p className="text-sm" style={{color: 'rgba(91, 111, 127, 0.7)'}}>{item.desc}</p>
               </div>
