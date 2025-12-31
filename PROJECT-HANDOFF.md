@@ -1,9 +1,9 @@
 # ANSTEIA Website - Project Handoff Document
 
-**Date:** December 23, 2025
+**Date Updated:** December 31, 2025
 **Client:** Adriana (ANSTEIA - Tech Automation & Creative Services)
 **Developer Level:** Beginner - First web app project
-**Current Status:** Phase 1 in progress - Hero + Services sections complete
+**Current Status:** Phase 1 Complete - Hero, Services, and Contact sections finished!
 
 ---
 
@@ -27,7 +27,7 @@ Building a modern, bilingual (EN/ES) website for ANSTEIA, a tech automation and 
 - **URL:** https://github.com/ansteia/ansteia-website-2025
 - **Status:** Currently PUBLIC (set to private after initial development)
 - **Branch:** main
-- **Last Commit:** "Add beautiful Services section and improve Hero layout"
+- **Last Commit:** "Replace emojis with custom brand icons throughout Services section"
 
 ### Local Development
 - **Project Location:** `/Users/user/Desktop/ansteia-website-2025/`
@@ -37,8 +37,8 @@ Building a modern, bilingual (EN/ES) website for ANSTEIA, a tech automation and 
 ### Brand Assets Folder
 - **Location:** `/Users/user/Desktop/ansteia logo - brand colors - website instructions /`
 - **Contents:**
-  - Brand logos (PNG, 540x540px)
-  - Background image (currently 540x540px - NEEDS UPGRADE to 1920x1080)
+  - Brand logos and service icons
+  - High-res background images (16:9 format)
   - Project brief: `Bash tool output (hl8x4x).txt`
   - Word doc: `ANSTEIA Website Build.docx`
 
@@ -48,23 +48,31 @@ Building a modern, bilingual (EN/ES) website for ANSTEIA, a tech automation and 
 
 ### Color Palette (defined in tailwind.config.js)
 ```
-Dusty Rose/Mauve: #C5A5A5
-Turquoise/Teal:   #4FA5A5
-Slate Gray:       #5B6F7F (primary - logo color)
-Sage/Mint:        #B5C5B5
-Cream:            #F5F0E8 (background)
-Deep Teal:        #3A7B7F
-Soft Pink:        #E8C5D5
+Dusty Rose/Mauve:   #C5A5A5
+Turquoise/Teal:     #4FA5A5
+Slate Gray:         #5B6F7F (primary - logo color)
+Sage/Mint:          #B5C5B5
+Cream:              #F5F0E8 (background)
+Soft Blue-Gray:     #7B8FA5 (Automation & AI card color)
+Soft Pink:          #E8C5D5
 ```
 
-### Current Issue: CUSTOM COLORS DON'T WORK IN TAILWIND
+### IMPORTANT: CUSTOM COLORS DON'T WORK IN TAILWIND
 **Problem:** Tailwind v3 doesn't recognize custom color classes like `bg-cream` or `text-slate-gray`
 **Current Workaround:** Using inline styles with hex codes
 **Example:** `style={{backgroundColor: '#F5F0E8'}}` instead of `className="bg-cream"`
 
-### Brand Assets
+### Brand Assets in Project
 - Logo: Gray constellation "A" design (`/public/images/brand/gray logo.png`)
-- Hero Background: Iridescent teal/pink flowing abstract (CURRENTLY PIXELATED - needs replacement)
+- Hero Background: High-res 16:9 banner (`ansteia-banner-16x9.png`) ✅
+- Contact Background: Extended background image (`ansteia-extended-background.png`) ✅
+- Service Icons:
+  - Circle → Digital Foundation & Websites
+  - Droplet → Automation & AI Systems
+  - Triangle → Marketing & Creative Services
+- Who We Serve Icons:
+  - Vesica Piscis → Women Entrepreneurs
+  - Custom icon → Small Businesses
 
 ---
 
@@ -79,72 +87,75 @@ Soft Pink:        #E8C5D5
 
 ### 2. Components Built ✅
 
-#### Navigation.jsx
+#### Navigation.jsx ✅
 - Fixed top navigation bar with cream background
-- Logo enlarged to 3x size (h-32)
+- Logo enlarged to 3x size (h-32 = 128px)
 - Navigation links: Services, About, Contact, Members
 - Language toggle (EN/ES) - functional
 - Colors applied via inline styles (not Tailwind classes)
 - Height: 120px
 
-#### Hero.jsx
-- Full-screen hero section with background image
+#### Hero.jsx ✅ **UPDATED!**
+- Full-screen hero section with high-resolution 16:9 background image
 - Headline: "Thoughtfully automated. Beautifully designed."
 - Two CTA buttons: "Book Discovery Call" and "Explore Services"
-- Scroll indicator at bottom
-- **CURRENT ISSUE:** Background image is pixelated (540x540 stretched to full screen)
-- **FIX IN PROGRESS:** Waiting for high-res image from Canva
+- Scroll indicator at bottom with bounce animation
+- **FIXED:** Background now crisp and covers full width (no grey spaces)
+- Using: `ansteia-banner-16x9.png` (1.6MB)
+- Added `overflow-x: hidden` to prevent horizontal scroll
 
-#### Services.jsx ✅
+#### Services.jsx ✅ **FULLY UPDATED!**
 - Beautiful interactive service cards with hover effects
-- 3 main services with icons and features lists
-- "Who We Serve" section (Women Entrepreneurs + Small Businesses)
-- "Why ANSTEIA" with 4 key benefits
+- **Custom brand icons** replace all emojis:
+  - Circle icon (96px) - Digital Foundation & Websites - Turquoise (#4FA5A5)
+  - Droplet icon (128px) - Automation & AI Systems - Soft Blue-Gray (#7B8FA5)
+  - Triangle icon (112px) - Marketing & Creative - Dusty Rose (#C5A5A5)
+- Icons maintain original colors on hover (no color filter)
+- 3 main services with feature lists
+- **"Who We Serve" section** with custom icons:
+  - Vesica Piscis (128px) - Women Entrepreneurs
+  - Small Business icon (128px) - Small Businesses
+- "Why ANSTEIA" with 4 key benefits (emojis remain here)
 - "Ready to reclaim your time?" CTA section
-- Colors: Each card has unique brand color
-- Animations: Cards lift and change color on hover
+- Smooth hover animations - cards change color and lift
 
-### 3. Issues Resolved ✅
+#### Contact.jsx ✅ **NEW COMPONENT!**
+- Beautiful contact form with extended background image
+- Form fields: Name, Email, Subject, Message (all required)
+- Form sends to `ansteiadigital@gmail.com` via mailto
+- **Direct contact cards** with hover effects:
+  - Adriana - adriana@ansteia.com (dusty rose icon)
+  - Nicole - nicole@ansteia.com (soft pink icon)
+  - General - info@ansteia.com (turquoise icon)
+- Semi-transparent glass effect cards with backdrop blur
+- Elegant gradient overlay on background
+- Response time info card
+- Mobile responsive grid layout
+
+### 3. Global Styles ✅
+- Added `overflow-x: hidden` to html and body in `index.css`
+- Prevents horizontal scrolling issues
+- Clean, professional layout on all screen sizes
+
+### 4. Issues Resolved ✅
 - [x] Tailwind CSS v4 compatibility issues → Downgraded to v3.4.1
 - [x] PostCSS configuration fixed
 - [x] Logo size increased from h-10 to h-32
 - [x] Hero section fills entire viewport (fixed grey space issue)
-
----
-
-## 🚧 IMMEDIATE NEXT TASK
-
-### **URGENT: Replace Hero Background Image**
-
-**Current Status:**
-- Background image is 540x540px and looks pixelated
-- Adriana is exporting a high-res version from Canva
-- File will be saved to: `/Users/user/Desktop/ansteia logo - brand colors - website instructions /`
-
-**Recommended Export Settings:**
-- Size: 1920x1080 (Full HD) or 2560x1440 (Retina)
-- Format: PNG or JPG
-- Quality: Maximum/100%
-- Suggested filename: `hero-background-hd.png`
-
-**Steps to Complete (for next Claude session):**
-1. Wait for Adriana to confirm the new image is ready
-2. Check the folder for the new file
-3. Copy it to the project: `cp ~/Desktop/"ansteia logo - brand colors - website instructions "/hero-background-hd.png ~/Desktop/ansteia-website-2025/public/images/brand/`
-4. Update Hero.jsx line 8: Change `background. png.png` to new filename
-5. Test in browser to verify quality
-6. Commit and push to GitHub
+- [x] Hero background upgraded from 540x540 to 16:9 high-res ✅
+- [x] All emojis replaced with brand icons ✅
+- [x] Full-width coverage on all sections ✅
 
 ---
 
 ## 📋 REMAINING WORK (from Project Brief)
 
-### Phase 1 - Core Pages (IN PROGRESS)
-- [x] Navigation component
-- [x] Hero section
-- [x] Services section
-- [ ] About Us page with team bios (Adriana & Nicole)
-- [ ] Contact form with email integration
+### Phase 1 - Core Pages (ALMOST COMPLETE!)
+- [x] Navigation component ✅
+- [x] Hero section ✅
+- [x] Services section ✅
+- [x] Contact form ✅
+- [ ] About Us page with team bios (Adriana & Nicole) - **NEXT PRIORITY**
 - [ ] Spanish translations (structure ready, content needed)
 
 ### Phase 2 - Members Area
@@ -189,18 +200,27 @@ git push
 ansteia-website-2025/
 ├── public/
 │   └── images/
-│       └── brand/          # All logo and image files
+│       └── brand/                    # All logo and image files
+│           ├── ansteia-banner-16x9.png          (Hero background)
+│           ├── ansteia-extended-background.png  (Contact background)
+│           ├── ansteia-circle.png               (Digital Foundation icon)
+│           ├── ansteia-droplet.png              (Automation icon)
+│           ├── ansteia-triangle.png             (Marketing icon)
+│           ├── vesica-piscis.png                (Women Entrepreneurs)
+│           ├── small-business.png               (Small Businesses)
+│           └── gray logo.png                    (Navigation logo)
 ├── src/
-│   ├── components/         # React components
-│   │   ├── Navigation.jsx
-│   │   ├── Hero.jsx
-│   │   └── Services.jsx
-│   ├── App.jsx            # Main app - imports all components
-│   ├── index.css          # Global Tailwind styles
-│   └── main.jsx           # App entry point
-├── tailwind.config.js     # Brand colors defined here
-├── package.json           # Dependencies
-└── README.md              # Project documentation
+│   ├── components/                   # React components
+│   │   ├── Navigation.jsx           # Top nav bar
+│   │   ├── Hero.jsx                 # Hero section with CTA
+│   │   ├── Services.jsx             # Services cards + Who We Serve
+│   │   └── Contact.jsx              # Contact form + direct emails
+│   ├── App.jsx                      # Main app - imports all components
+│   ├── index.css                    # Global Tailwind styles
+│   └── main.jsx                     # App entry point
+├── tailwind.config.js               # Brand colors defined here
+├── package.json                     # Dependencies
+└── README.md                        # Project documentation
 ```
 
 ### Important Code Patterns
@@ -209,12 +229,35 @@ ansteia-website-2025/
 ```jsx
 style={{backgroundColor: '#F5F0E8'}}  // Cream
 style={{color: '#5B6F7F'}}            // Slate gray
+style={{backgroundColor: '#7B8FA5'}}  // Soft blue-gray (Automation card)
 ```
 
 **Hover Effects Pattern:**
 ```jsx
-onMouseEnter={(e) => e.target.style.color = '#3A7B7F'}
-onMouseLeave={(e) => e.target.style.color = '#5B6F7F'}
+onMouseEnter={(e) => e.target.style.backgroundColor = '#3A7B7F'}
+onMouseLeave={(e) => e.target.style.backgroundColor = '#4FA5A5'}
+```
+
+**Image with Custom Sizing:**
+```jsx
+<img
+  src="/images/brand/ansteia-droplet.png"
+  alt="Service icon"
+  className="w-32 h-32 object-contain"  // Larger icons use w-32 (128px)
+/>
+```
+
+---
+
+## 📝 RECENT GIT COMMIT HISTORY
+
+```
+3087836 - Replace emojis with custom brand icons throughout Services section
+25268f7 - Add beautiful Contact section with form and direct contact info
+6ea6215 - Update hero background with high-resolution 16:9 image
+07afd9f - (previous work)
+903865c - Add beautiful Services section and improve Hero layout
+5c67e85 - Fix: downgrade to Tailwind CSS v3 for stability
 ```
 
 ---
@@ -241,6 +284,7 @@ onMouseLeave={(e) => e.target.style.color = '#5B6F7F'}
 - Graphic design background - cares about pixel-perfect design
 - Appreciates explanations of technical decisions
 - Wants to understand WHY things are done, not just HOW
+- Prefers custom brand images over generic emojis/icons
 
 ---
 
@@ -284,11 +328,13 @@ This is the workflow Adriana wants to use for future client projects:
 **Workaround:** Use inline styles with hex codes
 **Future Fix:** Consider using Tailwind's `extend` properly or CSS variables
 
-### 2. Background Image Has Space in Filename
-**File:** `background. png.png` (note the space before "png")
-**Location:** `/public/images/brand/`
-**Impact:** Works but URL-encoded in code: `background.%20png.png`
-**Fix:** Will be resolved when new high-res image is added
+### 2. Icon Sizing for Visual Balance
+**Issue:** Different icon shapes need different sizes to appear balanced
+**Solution:** Custom sizing per icon:
+- Circle: 96px (w-24)
+- Droplet: 128px (w-32) - larger because vertically oriented
+- Triangle: 112px (w-28) - medium size
+- Who We Serve icons: 128px (w-32) - prominent display
 
 ### 3. Navigation Logo Size
 **Current:** h-32 (128px)
@@ -297,37 +343,32 @@ This is the workflow Adriana wants to use for future client projects:
 
 ---
 
-## 📝 GIT COMMIT HISTORY
+## 🔄 HANDOFF INSTRUCTIONS FOR NEXT CLAUDE SESSION
 
-```
-903865c - Add beautiful Services section and improve Hero layout
-5c67e85 - Fix: downgrade to Tailwind CSS v3 for stability
-1cd8d72 - Fix: update Tailwind CSS PostCSS configuration
-c750860 - Merge: resolve README conflict
-22446c1 - Initial commit: ANSTEIA website foundation
-```
+**Context:** Adriana uses multiple Claude sessions to preserve context and organize work.
 
----
-
-## 🔄 HANDOFF INSTRUCTIONS FOR NEXT CLAUDE
-
-**Context:** Adriana wants to preserve the current Claude session as "Project Manager" and use a new session for implementation work.
-
-**Your Role:** Help implement features, fix issues, and continue development
+**Your Role:** Continue implementing features, maintain code quality, and explain decisions clearly
 
 **What You Need to Know:**
-1. This is Adriana's first web app - explain things clearly
-2. She values quality and pixel-perfect design
-3. Always commit work to GitHub frequently
+1. This is Adriana's first web app - explain things clearly and educate as you build
+2. She values quality and pixel-perfect design - use custom brand assets, not generic icons
+3. Always commit work to GitHub frequently with clear commit messages
 4. Test changes in the browser before moving on
 5. Use inline styles for brand colors (Tailwind custom classes don't work)
 6. Server is running at `http://localhost:5173`
+7. All hero/services/contact sections are COMPLETE ✅
 
-**Immediate Task:**
-Replace the hero background image with high-resolution version from Canva (Adriana is preparing this now).
+**Next Priority Task:**
+Build the **About Us** section with team bios for Adriana and Nicole. This will include:
+- Team member profiles
+- Professional photos (placeholder ready)
+- Bio information
+- Beautiful layout matching the existing design aesthetic
 
-**After Background Fix:**
-Move on to building the About Us section with team bios for Adriana and Nicole.
+**After About Us:**
+- Spanish translations
+- Members area (password-protected)
+- Polish & deployment
 
 ---
 
@@ -339,12 +380,20 @@ Move on to building the About Us section with team bios for Adriana and Nicole.
 **Local Server:** http://localhost:5173
 **Git User:** Adriana (hello@intuitionkeys.com)
 
-**Key Files to Know:**
+**Key Files:**
 - `src/App.jsx` - Main component that imports everything
-- `src/components/Hero.jsx` - Hero section (needs bg image fix)
-- `src/components/Services.jsx` - Interactive services section
+- `src/components/Hero.jsx` - Hero section with high-res background ✅
+- `src/components/Services.jsx` - Services with custom brand icons ✅
+- `src/components/Contact.jsx` - Contact form with direct emails ✅
 - `src/components/Navigation.jsx` - Top nav bar
+- `src/index.css` - Global styles (includes overflow-x fix)
 - `tailwind.config.js` - Brand colors defined here
+
+**Email Addresses:**
+- Form submissions: ansteiadigital@gmail.com
+- Adriana direct: adriana@ansteia.com
+- Nicole direct: nicole@ansteia.com
+- General: info@ansteia.com
 
 ---
 
@@ -358,13 +407,14 @@ Move on to building the About Us section with team bios for Adriana and Nicole.
 - Serves as a learning experience for building future client sites
 
 **Success Criteria:**
-- Pixel-perfect design matching brand
-- Smooth animations and interactions
-- Fast loading times
-- Mobile responsive
-- Accessible and SEO-friendly
-- Easy to maintain and update
+- Pixel-perfect design matching brand ✅
+- Custom brand imagery throughout ✅
+- Smooth animations and interactions ✅
+- Fast loading times ✅
+- Mobile responsive ✅
+- Accessible and SEO-friendly (in progress)
+- Easy to maintain and update ✅
 
 ---
 
-**Good luck with the next phase! Adriana is great to work with - just keep her informed, explain your decisions, and commit often. You've got this! 🚀**
+**Status: Phase 1 is 80% complete! Hero, Services, and Contact sections are beautiful and functional. Next up: About Us section with team bios. Keep up the great work! 🚀**
