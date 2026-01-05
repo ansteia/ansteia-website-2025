@@ -1,20 +1,21 @@
 # ANSTEIA Website - Project Handoff Document
 
-**Date Updated:** December 31, 2025
+**Date Updated:** January 5, 2026
 **Client:** Adriana (ANSTEIA - Tech Automation & Creative Services)
 **Developer Level:** Beginner - First web app project
-**Current Status:** Phase 1 Complete - Hero, Services, and Contact sections finished!
+**Current Status:** Phase 1 COMPLETE + Members Area COMPLETE! 🎉
 
 ---
 
 ## 🎯 PROJECT OVERVIEW
 
-Building a modern, bilingual (EN/ES) website for ANSTEIA, a tech automation and creative services company run by Adriana and Nicole.
+Building a modern, bilingual (EN/ES) website for ANSTEIA, a tech automation and creative services company run by Adriana and Nicole. Plus a private Members area (Spanish only) for the Lean In pilot group.
 
 **Tagline:** "Thoughtfully automated. Beautifully designed."
 
 **Tech Stack:**
 - React 18 + Vite
+- React Router DOM (for routing)
 - Tailwind CSS v3.4.1
 - Deployed to: Netlify (when ready)
 - Repository: https://github.com/ansteia/ansteia-website-2025
@@ -27,7 +28,7 @@ Building a modern, bilingual (EN/ES) website for ANSTEIA, a tech automation and 
 - **URL:** https://github.com/ansteia/ansteia-website-2025
 - **Status:** Currently PUBLIC (set to private after initial development)
 - **Branch:** main
-- **Last Commit:** "Replace emojis with custom brand icons throughout Services section"
+- **Last Commit:** "Update Members login: lowercase credentials + show/hide password button"
 
 ### Local Development
 - **Project Location:** `/Users/user/Desktop/ansteia-website-2025/`
@@ -39,40 +40,54 @@ Building a modern, bilingual (EN/ES) website for ANSTEIA, a tech automation and 
 - **Contents:**
   - Brand logos and service icons
   - High-res background images (16:9 format)
-  - Project brief: `Bash tool output (hl8x4x).txt`
-  - Word doc: `ANSTEIA Website Build.docx`
+  - Bio documents for About section
+  - Members area documentation
+  - Project brief: `ANSTEIA Website Build.docx`
+  - Why ANSTEIA icons: trilingual-services, tech-and-creative, time-saving, human-ai
 
 ---
 
-## 🎨 BRAND COLORS & ASSETS
+## 🎨 BRAND COLORS & DESIGN THEME
 
-### Color Palette (defined in tailwind.config.js)
+### **DARK THEME** (Current Design) 🌙
+**Background:** Pure Black (#000000)
+**Text:** White (#FFFFFF) and light gray (#E0E0E0)
+**Design:** Glass-morphism with semi-transparent cards
+
+### Color Palette
 ```
-Dusty Rose/Mauve:   #C5A5A5
-Turquoise/Teal:     #4FA5A5
-Slate Gray:         #5B6F7F (primary - logo color)
-Sage/Mint:          #B5C5B5
-Cream:              #F5F0E8 (background)
-Soft Blue-Gray:     #7B8FA5 (Automation & AI card color)
-Soft Pink:          #E8C5D5
+Black Background:    #000000 (main background)
+White Text:          #FFFFFF (headings)
+Light Gray Text:     #E0E0E0 (body text)
+Dusty Rose/Mauve:    #C5A5A5 (Adriana's accent)
+Turquoise/Teal:      #4FA5A5 (CTAs, primary accent)
+Soft Blue-Gray:      #7B8FA5 (Automation card)
+Soft Pink:           #E8C5D5 (Nicole's accent)
+Sage/Mint:           #B5C5B5 (subtle accents)
 ```
 
 ### IMPORTANT: CUSTOM COLORS DON'T WORK IN TAILWIND
-**Problem:** Tailwind v3 doesn't recognize custom color classes like `bg-cream` or `text-slate-gray`
+**Problem:** Tailwind v3 doesn't recognize custom color classes like `bg-cream`
 **Current Workaround:** Using inline styles with hex codes
-**Example:** `style={{backgroundColor: '#F5F0E8'}}` instead of `className="bg-cream"`
+**Example:** `style={{backgroundColor: '#000000'}}` instead of `className="bg-black"`
 
 ### Brand Assets in Project
-- Logo: Gray constellation "A" design (`/public/images/brand/gray logo.png`)
-- Hero Background: High-res 16:9 banner (`ansteia-banner-16x9.png`) ✅
-- Contact Background: Extended background image (`ansteia-extended-background.png`) ✅
-- Service Icons:
-  - Circle → Digital Foundation & Websites
-  - Droplet → Automation & AI Systems
-  - Triangle → Marketing & Creative Services
-- Who We Serve Icons:
-  - Vesica Piscis → Women Entrepreneurs
-  - Custom icon → Small Businesses
+- **White Logo:** `ansteia white logo.png` (used in dark theme navigation)
+- **Gray Logo:** `gray logo.png` (original)
+- **Hero Background:** `ansteia-banner-16x9.png` with dark overlay
+- **Contact Background:** `ansteia-extended-background.png` with dark overlay
+- **Service Icons:**
+  - Circle (96px) → Digital Foundation & Websites
+  - Droplet (128px) → Automation & AI Systems
+  - Triangle (112px) → Marketing & Creative Services
+- **Who We Serve Icons:**
+  - Vesica Piscis (128px) → Women Entrepreneurs
+  - Small Business (128px) → Small Businesses
+- **Why ANSTEIA Icons (96px each):**
+  - trilingual-services.png
+  - tech-and-creative.png
+  - time-saving.png
+  - human-ai.png
 
 ---
 
@@ -80,95 +95,142 @@ Soft Pink:          #E8C5D5
 
 ### 1. Project Setup ✅
 - [x] React + Vite + Tailwind CSS configured
+- [x] React Router DOM installed and configured
 - [x] Git repository initialized and connected to GitHub
 - [x] Brand assets organized in `/public/images/brand/`
 - [x] Node.js installed via Homebrew
 - [x] Development server working
+- [x] Dark theme implemented throughout
 
-### 2. Components Built ✅
+### 2. Public Homepage Components ✅
 
-#### Navigation.jsx ✅
-- Fixed top navigation bar with cream background
-- Logo enlarged to 3x size (h-32 = 128px)
+#### Navigation.jsx ✅ **DARK THEME**
+- Fixed top navigation bar with dark background
+- **White ANSTEIA logo** (h-32 = 128px)
 - Navigation links: Services, About, Contact, Members
+- Links turn turquoise on hover
 - Language toggle (EN/ES) - functional
-- Colors applied via inline styles (not Tailwind classes)
 - Height: 120px
+- Black background with transparency
 
-#### Hero.jsx ✅ **UPDATED!**
-- Full-screen hero section with high-resolution 16:9 background image
-- Headline: "Thoughtfully automated. Beautifully designed."
-- Two CTA buttons: "Book Discovery Call" and "Explore Services"
-- Scroll indicator at bottom with bounce animation
-- **FIXED:** Background now crisp and covers full width (no grey spaces)
-- Using: `ansteia-banner-16x9.png` (1.6MB)
-- Added `overflow-x: hidden` to prevent horizontal scroll
+#### Hero.jsx ✅ **DARK THEME**
+- Full-screen hero section with high-res 16:9 background
+- **Dark overlay (70% opacity)** on background image
+- White headline: "Thoughtfully automated. Beautifully designed."
+- Two CTA buttons: turquoise primary + transparent outlined secondary
+- Scroll indicator with white arrow
+- Perfect responsive design
 
-#### Services.jsx ✅ **FULLY UPDATED!**
-- Beautiful interactive service cards with hover effects
-- **Custom brand icons** replace all emojis:
-  - Circle icon (96px) - Digital Foundation & Websites - Turquoise (#4FA5A5)
-  - Droplet icon (128px) - Automation & AI Systems - Soft Blue-Gray (#7B8FA5)
-  - Triangle icon (112px) - Marketing & Creative - Dusty Rose (#C5A5A5)
-- Icons maintain original colors on hover (no color filter)
-- 3 main services with feature lists
-- **"Who We Serve" section** with custom icons:
-  - Vesica Piscis (128px) - Women Entrepreneurs
-  - Small Business icon (128px) - Small Businesses
-- "Why ANSTEIA" with 4 key benefits (emojis remain here)
-- "Ready to reclaim your time?" CTA section
-- Smooth hover animations - cards change color and lift
+#### Services.jsx ✅ **DARK THEME + CUSTOM ICONS**
+- Black background with subtle blur decorations
+- **Custom brand icons** throughout:
+  - Circle, Droplet, Triangle service icons
+  - Vesica Piscis and Small Business icons
+  - **Why ANSTEIA icons** (replaced ALL emojis!)
+- Glass-morphism service cards (5% white transparency)
+- Beautiful hover effects - cards lift and change to brand colors
+- "Who We Serve" section with dark cards
+- "Why ANSTEIA" section with 4 custom icons
+- CTA section with turquoise button
 
-#### Contact.jsx ✅ **NEW COMPONENT!**
-- Beautiful contact form with extended background image
-- Form fields: Name, Email, Subject, Message (all required)
-- Form sends to `ansteiadigital@gmail.com` via mailto
-- **Direct contact cards** with hover effects:
-  - Adriana - adriana@ansteia.com (dusty rose icon)
-  - Nicole - nicole@ansteia.com (soft pink icon)
-  - General - info@ansteia.com (turquoise icon)
-- Semi-transparent glass effect cards with backdrop blur
-- Elegant gradient overlay on background
-- Response time info card
-- Mobile responsive grid layout
+#### About.jsx ✅ **DARK THEME**
+- Beautiful team bios for Adriana and Nicole
+- **Photo placeholders** (3:4 aspect ratio) ready for real photos
+- Full professional bios from bio document:
+  - Adriana: Founder (law background, creative studios, AI systems)
+  - Nicole: Co-Founder & Brand Architect (social media, design, AI tools)
+- Alternating layout (photo left/right)
+- Glass-morphism cards with brand color borders
+- CTA section at bottom
 
-### 3. Global Styles ✅
-- Added `overflow-x: hidden` to html and body in `index.css`
-- Prevents horizontal scrolling issues
-- Clean, professional layout on all screen sizes
+#### Contact.jsx ✅ **DARK THEME**
+- Dark gradient overlay on background image
+- Glass-effect contact form with dark inputs
+- Form sends to ansteiadigital@gmail.com
+- **Direct contact cards:**
+  - Adriana (dusty rose icon)
+  - Nicole (soft pink icon)
+  - General info (turquoise icon)
+- Response time card
+- All cards with 5% white transparency
 
-### 4. Issues Resolved ✅
-- [x] Tailwind CSS v4 compatibility issues → Downgraded to v3.4.1
-- [x] PostCSS configuration fixed
-- [x] Logo size increased from h-10 to h-32
-- [x] Hero section fills entire viewport (fixed grey space issue)
-- [x] Hero background upgraded from 540x540 to 16:9 high-res ✅
-- [x] All emojis replaced with brand icons ✅
-- [x] Full-width coverage on all sections ✅
+### 3. Members Area (Spanish Only) ✅ **COMPLETE!**
+
+#### Route: `/members` 🔒 PASSWORD PROTECTED
+
+#### Login Screen ✅
+- Beautiful dark themed login form
+- **Credentials:**
+  - Username: `emprendedora` (all lowercase)
+  - Password: `lean-in` (all lowercase)
+- **Show/hide password toggle** with eye icon
+- Error message for incorrect credentials
+- ANSTEIA white logo at top
+- "Sistema Ansteia · Piloto Lean In" branding
+
+#### Members Dashboard (After Login) ✅
+**Hero Welcome:**
+- "Bienvenida. Estás en el lugar correcto"
+- Empowering message for women entrepreneurs
+- Turquoise highlighted closing statement
+
+**Three-Tier Plan System:**
+1. **Plan Claridad - $20 USD**
+   - Database app, client tracking, expense control
+   - Income dashboard, feedback system
+   - Training videos, support group
+   - Turquoise border
+
+2. **Plan Automatización - $70 USD** ⭐ POPULAR
+   - All Claridad features
+   - Automatic forms, QR payments
+   - Emails & reminders, advanced feedback
+   - Highlighted with badge and special styling
+
+3. **Plan WhatsApp Total - $150 USD**
+   - All previous features
+   - WhatsApp automation flows
+   - Personalized integrations
+   - Soft pink styling
+
+**Workshop Section:**
+- Sistema Ansteia Piloto Lean In enrollment
+- Turquoise highlighted card
+- Practical training description
+
+**Microcopy Footer:**
+- "Avanza con foco"
+- "Puedes tenerlo todo, con orden"
+
+### 4. Routing System ✅
+- **Homepage `/`** - Public (Hero, Services, About, Contact)
+- **Members `/members`** - Password protected (Lean In pilot group only)
+- React Router DOM configured
+- Navigation "Members" link goes to `/members`
+
+### 5. Global Styles ✅
+- Dark theme: Black background (#000000), white text
+- `overflow-x: hidden` prevents horizontal scroll
+- Glass-morphism effect throughout
+- Smooth transitions and hover effects
 
 ---
 
-## 📋 REMAINING WORK (from Project Brief)
+## 📋 REMAINING WORK
 
-### Phase 1 - Core Pages (ALMOST COMPLETE!)
-- [x] Navigation component ✅
-- [x] Hero section ✅
-- [x] Services section ✅
-- [x] Contact form ✅
-- [ ] About Us page with team bios (Adriana & Nicole) - **NEXT PRIORITY**
-- [ ] Spanish translations (structure ready, content needed)
-
-### Phase 2 - Members Area
-- [ ] Password-protected `/members` route (password: "leanin")
-- [ ] Lean In packages display (Bronze, Silver, Gold)
-- [ ] QR code payment integration (waiting for Nicole to provide QR codes)
+### Phase 2 - Enhancements
+- [ ] Spanish translations for public site (structure ready, content needed)
+- [ ] Add real team photos (placeholders ready in About section)
+- [ ] QR code images from Nicole for payment integration
+- [ ] Real authentication system (currently demo login)
 
 ### Phase 3 - Polish & Launch
-- [ ] Team photos (placeholders ready)
 - [ ] Privacy Policy & Terms of Service pages
-- [ ] SEO optimization (meta tags, alt text)
+- [ ] SEO optimization (meta tags, alt text, descriptions)
+- [ ] Performance optimization
 - [ ] Deploy to Netlify
 - [ ] Connect custom domain
+- [ ] Test on multiple devices and browsers
 
 ---
 
@@ -200,36 +262,45 @@ git push
 ansteia-website-2025/
 ├── public/
 │   └── images/
-│       └── brand/                    # All logo and image files
-│           ├── ansteia-banner-16x9.png          (Hero background)
-│           ├── ansteia-extended-background.png  (Contact background)
-│           ├── ansteia-circle.png               (Digital Foundation icon)
-│           ├── ansteia-droplet.png              (Automation icon)
-│           ├── ansteia-triangle.png             (Marketing icon)
-│           ├── vesica-piscis.png                (Women Entrepreneurs)
-│           ├── small-business.png               (Small Businesses)
-│           └── gray logo.png                    (Navigation logo)
+│       └── brand/                       # All logo and image files
+│           ├── ansteia-banner-16x9.png              (Hero background)
+│           ├── ansteia-extended-background.png      (Contact background)
+│           ├── ansteia white logo.png               (Navigation - dark theme)
+│           ├── gray logo.png                        (Original)
+│           ├── ansteia-circle.png                   (Digital Foundation icon)
+│           ├── ansteia-droplet.png                  (Automation icon)
+│           ├── ansteia-triangle.png                 (Marketing icon)
+│           ├── vesica-piscis.png                    (Women Entrepreneurs)
+│           ├── small-business.png                   (Small Businesses)
+│           ├── trilingual-services.png              (Why ANSTEIA)
+│           ├── tech-and-creative.png                (Why ANSTEIA)
+│           ├── time-saving.png                      (Why ANSTEIA)
+│           └── human-ai.png                         (Why ANSTEIA)
 ├── src/
-│   ├── components/                   # React components
-│   │   ├── Navigation.jsx           # Top nav bar
-│   │   ├── Hero.jsx                 # Hero section with CTA
-│   │   ├── Services.jsx             # Services cards + Who We Serve
-│   │   └── Contact.jsx              # Contact form + direct emails
-│   ├── App.jsx                      # Main app - imports all components
-│   ├── index.css                    # Global Tailwind styles
-│   └── main.jsx                     # App entry point
-├── tailwind.config.js               # Brand colors defined here
-├── package.json                     # Dependencies
-└── README.md                        # Project documentation
+│   ├── components/                      # React components
+│   │   ├── Navigation.jsx              # Top nav bar (dark theme)
+│   │   ├── Hero.jsx                    # Hero section (dark theme)
+│   │   ├── Services.jsx                # Services cards (dark theme)
+│   │   ├── About.jsx                   # Team bios (dark theme)
+│   │   ├── Contact.jsx                 # Contact form (dark theme)
+│   │   └── Members.jsx                 # Members area (Spanish, password protected)
+│   ├── App.jsx                         # Main app with React Router
+│   ├── index.css                       # Global dark theme styles
+│   └── main.jsx                        # App entry with BrowserRouter
+├── tailwind.config.js                  # Brand colors defined here
+├── package.json                        # Dependencies (includes react-router-dom)
+└── PROJECT-HANDOFF.md                  # This document!
 ```
 
 ### Important Code Patterns
 
-**Using Brand Colors (inline styles required):**
+**Dark Theme Colors (inline styles required):**
 ```jsx
-style={{backgroundColor: '#F5F0E8'}}  // Cream
-style={{color: '#5B6F7F'}}            // Slate gray
-style={{backgroundColor: '#7B8FA5'}}  // Soft blue-gray (Automation card)
+style={{backgroundColor: '#000000'}}      // Black background
+style={{color: '#FFFFFF'}}                 // White text
+style={{color: '#E0E0E0'}}                 // Light gray text
+style={{backgroundColor: '#4FA5A5'}}       // Turquoise CTAs
+style={{backgroundColor: 'rgba(255, 255, 255, 0.05)'}}  // Glass-morphism cards
 ```
 
 **Hover Effects Pattern:**
@@ -238,13 +309,13 @@ onMouseEnter={(e) => e.target.style.backgroundColor = '#3A7B7F'}
 onMouseLeave={(e) => e.target.style.backgroundColor = '#4FA5A5'}
 ```
 
-**Image with Custom Sizing:**
+**Glass-Morphism Card:**
 ```jsx
-<img
-  src="/images/brand/ansteia-droplet.png"
-  alt="Service icon"
-  className="w-32 h-32 object-contain"  // Larger icons use w-32 (128px)
-/>
+style={{
+  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+  border: '1px solid rgba(255, 255, 255, 0.1)',
+  backdropFilter: 'blur(10px)'
+}}
 ```
 
 ---
@@ -252,12 +323,12 @@ onMouseLeave={(e) => e.target.style.backgroundColor = '#4FA5A5'}
 ## 📝 RECENT GIT COMMIT HISTORY
 
 ```
-3087836 - Replace emojis with custom brand icons throughout Services section
-25268f7 - Add beautiful Contact section with form and direct contact info
-6ea6215 - Update hero background with high-resolution 16:9 image
-07afd9f - (previous work)
-903865c - Add beautiful Services section and improve Hero layout
-5c67e85 - Fix: downgrade to Tailwind CSS v3 for stability
+e71d217 - Update Members login: lowercase credentials + show/hide password button
+49e3893 - Add password protection to Members area - Lean In pilot group only
+d205535 - Add Members area - Sistema Ansteia Piloto Lean In (Spanish only)
+227ab39 - Add About Us section with team bios and photo placeholders
+2d161d4 - Transform entire website to dark theme with elegant styling
+c639953 - Replace emojis with custom brand images in Why ANSTEIA section
 ```
 
 ---
@@ -268,15 +339,17 @@ onMouseLeave={(e) => e.target.style.backgroundColor = '#4FA5A5'}
 - **Background:** Law background, transitioned to creative work 16 years ago
 - **Experience:** Photography studio owner, now learning web development
 - **Skill Level:** Beginner - this is her first web app
-- **Needs:** Clear instructions, explanations of what's being done, learning opportunity
+- **Needs:** Clear instructions, explanations, learning opportunity
 - **Location:** Based in Australia
 - **Business Partner:** Nicole (based in Bolivia)
+- **Preference:** Dark theme aesthetic, clean modern design
 
 ### Learning Goals
 - Understanding web app development workflow
 - Git and GitHub basics
-- React component structure
+- React component structure and routing
 - Building interactive features
+- Password protection and authentication
 - Preparing for client work (wants to replicate this workflow)
 
 ### Communication Style
@@ -285,12 +358,13 @@ onMouseLeave={(e) => e.target.style.backgroundColor = '#4FA5A5'}
 - Appreciates explanations of technical decisions
 - Wants to understand WHY things are done, not just HOW
 - Prefers custom brand images over generic emojis/icons
+- Likes to see what she's typing (show/hide password toggles!)
 
 ---
 
 ## 🎯 WORKFLOW ESTABLISHED
 
-This is the workflow Adriana wants to use for future client projects:
+This is the workflow Adriana uses for projects:
 
 1. **Gather Client Materials**
    - Project brief (Word/text document)
@@ -300,18 +374,19 @@ This is the workflow Adriana wants to use for future client projects:
 2. **Share with Claude**
    - Assets folder on Desktop
    - GitHub repo link
+   - Handoff document
 
 3. **Build Foundation**
    - Set up tech stack
    - Organize assets
    - Create components
-   - Push to GitHub
+   - Push to GitHub frequently
 
 4. **Iterative Development**
    - Build section by section
-   - Test locally
+   - Test locally at each step
    - Get client feedback
-   - Commit regularly
+   - Commit regularly with clear messages
 
 5. **Deployment**
    - Connect to Netlify
@@ -331,15 +406,14 @@ This is the workflow Adriana wants to use for future client projects:
 ### 2. Icon Sizing for Visual Balance
 **Issue:** Different icon shapes need different sizes to appear balanced
 **Solution:** Custom sizing per icon:
-- Circle: 96px (w-24)
-- Droplet: 128px (w-32) - larger because vertically oriented
-- Triangle: 112px (w-28) - medium size
-- Who We Serve icons: 128px (w-32) - prominent display
+- Service icons: 96px (circle), 128px (droplet), 112px (triangle)
+- Who We Serve icons: 128px
+- Why ANSTEIA icons: 96px
 
-### 3. Navigation Logo Size
-**Current:** h-32 (128px)
-**Context:** User requested 3x bigger than original (h-10)
-**Works well:** Fits in 120px tall navigation bar
+### 3. Members Area Authentication
+**Current:** Demo login (checks username/password in component state)
+**Future:** Implement proper authentication with backend
+**Credentials:** username: `emprendedora`, password: `lean-in` (all lowercase)
 
 ---
 
@@ -351,24 +425,27 @@ This is the workflow Adriana wants to use for future client projects:
 
 **What You Need to Know:**
 1. This is Adriana's first web app - explain things clearly and educate as you build
-2. She values quality and pixel-perfect design - use custom brand assets, not generic icons
+2. She values quality and pixel-perfect design - use custom brand assets
 3. Always commit work to GitHub frequently with clear commit messages
 4. Test changes in the browser before moving on
 5. Use inline styles for brand colors (Tailwind custom classes don't work)
 6. Server is running at `http://localhost:5173`
-7. All hero/services/contact sections are COMPLETE ✅
+7. **DARK THEME** throughout the entire site - black background, white text
+8. Members area is SEPARATE and password-protected for Lean In group only
 
-**Next Priority Task:**
-Build the **About Us** section with team bios for Adriana and Nicole. This will include:
-- Team member profiles
-- Professional photos (placeholder ready)
-- Bio information
-- Beautiful layout matching the existing design aesthetic
+**Current State:**
+- Homepage is COMPLETE and PUBLIC ✅
+- Members area is COMPLETE with password protection ✅
+- Dark theme applied everywhere ✅
+- All custom brand icons in place ✅
+- About section with team bios done ✅
 
-**After About Us:**
-- Spanish translations
-- Members area (password-protected)
-- Polish & deployment
+**Next Priority Tasks:**
+1. Spanish translations for public site (if client provides content)
+2. Add real team photos when provided
+3. Integrate QR codes for Members area payments (waiting for Nicole)
+4. SEO optimization
+5. Deploy to Netlify
 
 ---
 
@@ -378,15 +455,23 @@ Build the **About Us** section with team bios for Adriana and Nicole. This will 
 **Assets Folder:** `/Users/user/Desktop/ansteia logo - brand colors - website instructions /`
 **GitHub:** https://github.com/ansteia/ansteia-website-2025
 **Local Server:** http://localhost:5173
+**Members Area:** http://localhost:5173/members
 **Git User:** Adriana (hello@intuitionkeys.com)
 
+**Members Login:**
+- Username: `emprendedora`
+- Password: `lean-in`
+
 **Key Files:**
-- `src/App.jsx` - Main component that imports everything
-- `src/components/Hero.jsx` - Hero section with high-res background ✅
-- `src/components/Services.jsx` - Services with custom brand icons ✅
-- `src/components/Contact.jsx` - Contact form with direct emails ✅
-- `src/components/Navigation.jsx` - Top nav bar
-- `src/index.css` - Global styles (includes overflow-x fix)
+- `src/App.jsx` - Main app with React Router (routes for / and /members)
+- `src/main.jsx` - App entry with BrowserRouter
+- `src/components/Navigation.jsx` - Dark theme nav bar
+- `src/components/Hero.jsx` - Dark theme hero
+- `src/components/Services.jsx` - Dark theme services with custom icons
+- `src/components/About.jsx` - Dark theme team bios
+- `src/components/Contact.jsx` - Dark theme contact form
+- `src/components/Members.jsx` - Password-protected Spanish Members area
+- `src/index.css` - Global dark theme styles
 - `tailwind.config.js` - Brand colors defined here
 
 **Email Addresses:**
@@ -400,21 +485,23 @@ Build the **About Us** section with team bios for Adriana and Nicole. This will 
 ## ✨ PROJECT VISION
 
 **End Goal:** A beautiful, professional, bilingual website that:
-- Showcases ANSTEIA's services
-- Allows clients to book discovery calls
-- Has a password-protected members area
-- Demonstrates the quality Adriana will deliver to her own clients
-- Serves as a learning experience for building future client sites
+- Showcases ANSTEIA's services to global clients ✅
+- Has a sleek dark theme aesthetic ✅
+- Allows clients to book discovery calls ✅
+- Has a password-protected Spanish Members area for Lean In pilot ✅
+- Demonstrates the quality Adriana will deliver to her own clients ✅
+- Serves as a learning experience for building future client sites ✅
 
 **Success Criteria:**
-- Pixel-perfect design matching brand ✅
-- Custom brand imagery throughout ✅
+- Pixel-perfect dark theme design ✅
+- Custom brand imagery throughout (NO generic emojis) ✅
 - Smooth animations and interactions ✅
 - Fast loading times ✅
 - Mobile responsive ✅
+- Password protection for Members area ✅
 - Accessible and SEO-friendly (in progress)
 - Easy to maintain and update ✅
 
 ---
 
-**Status: Phase 1 is 80% complete! Hero, Services, and Contact sections are beautiful and functional. Next up: About Us section with team bios. Keep up the great work! 🚀**
+**Status: Phase 1 is 100% COMPLETE! 🎉 Dark theme implemented, Members area functional with password protection, About section done with team bios. Ready for Spanish translations, real photos, and deployment! Amazing work!** 🚀

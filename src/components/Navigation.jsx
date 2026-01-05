@@ -28,11 +28,13 @@ export default function Navigation() {
         <div className="flex justify-between items-center" style={{height: '120px'}}>
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img
-              src="/images/brand/ansteia white logo.png"
-              alt="ANSTEIA"
-              className="h-32 w-auto"
-            />
+            <a href="/" aria-label="ANSTEIA Home">
+              <img
+                src="/images/brand/ansteia white logo.png"
+                alt="ANSTEIA logo - Thoughtfully automated, beautifully designed"
+                className="h-32 w-auto"
+              />
+            </a>
           </div>
 
           {/* Desktop Navigation */}

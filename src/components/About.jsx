@@ -40,7 +40,10 @@ export default function About() {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-label="Adriana Mendivil profile photo placeholder"
+                    role="img"
                   >
+                    <title>Adriana Mendivil - Founder of ANSTEIA</title>
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -105,7 +108,10 @@ export default function About() {
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
+                    aria-label="Nicole Coelho profile photo placeholder"
+                    role="img"
                   >
+                    <title>Nicole Coelho - Co-Founder & Brand Architect at ANSTEIA</title>
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"

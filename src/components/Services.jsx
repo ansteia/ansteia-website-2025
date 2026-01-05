@@ -111,7 +111,7 @@ export default function Services() {
               >
                 <img
                   src={service.icon}
-                  alt={service.title}
+                  alt={`${service.title} - ANSTEIA service icon`}
                   className={
                     service.id === 2 ? "w-32 h-32 object-contain" :
                     service.id === 3 ? "w-28 h-28 object-contain" :
@@ -180,7 +180,7 @@ export default function Services() {
             <div className="flex justify-center mb-6">
               <img
                 src="/images/brand/vesica-piscis.png"
-                alt="For Women Entrepreneurs"
+                alt="Vesica Piscis symbol representing women entrepreneurs and feminine leadership in business"
                 className="w-32 h-32 object-contain"
               />
             </div>
@@ -199,7 +199,7 @@ export default function Services() {
             <div className="flex justify-center mb-6">
               <img
                 src="/images/brand/small-business.png"
-                alt="For Small Businesses"
+                alt="Icon representing small businesses and growing companies seeking automation and digital solutions"
                 className="w-32 h-32 object-contain"
               />
             </div>
@@ -219,10 +219,10 @@ export default function Services() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { image: '/images/brand/trilingual-services.png', title: 'Trilingual Service', desc: 'EN / ES / PT' },
-              { image: '/images/brand/tech-and-creative.png', title: 'Tech + Creative', desc: 'Best of both worlds' },
-              { image: '/images/brand/time-saving.png', title: 'Time-Saving Focus', desc: 'Your freedom matters' },
-              { image: '/images/brand/human-ai.png', title: 'Human + AI', desc: 'Smart collaboration' }
+              { image: '/images/brand/trilingual-services.png', title: 'Trilingual Service', desc: 'EN / ES / PT', altText: 'Trilingual services icon - ANSTEIA offers support in English, Spanish, and Portuguese' },
+              { image: '/images/brand/tech-and-creative.png', title: 'Tech + Creative', desc: 'Best of both worlds', altText: 'Technology and creativity combined - representing ANSTEIA\'s dual expertise' },
+              { image: '/images/brand/time-saving.png', title: 'Time-Saving Focus', desc: 'Your freedom matters', altText: 'Time-saving automation icon - helping entrepreneurs reclaim their time' },
+              { image: '/images/brand/human-ai.png', title: 'Human + AI', desc: 'Smart collaboration', altText: 'Human and AI collaboration icon - intelligent systems with human touch' }
             ].map((item, idx) => (
               <div
                 key={idx}
@@ -232,7 +232,7 @@ export default function Services() {
                 <div className="flex justify-center mb-4">
                   <img
                     src={item.image}
-                    alt={item.title}
+                    alt={item.altText}
                     className="w-24 h-24 object-contain"
                   />
                 </div>
