@@ -2,12 +2,21 @@ import { useState } from 'react';
 
 export default function Members() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [showLogin, setShowLogin] = useState(true);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
-  // Simple login handler (for demo - would connect to real auth later)
+  // Login handler with password check
   const handleLogin = (e) => {
     e.preventDefault();
-    setIsLoggedIn(true);
+    setError('');
+
+    // Check credentials
+    if (username === 'EMPRENDEDORA' && password === 'Lean-In') {
+      setIsLoggedIn(true);
+    } else {
+      setError('Usuario o contraseña incorrectos');
+    }
   };
 
   // Login/Registration Screen
@@ -30,29 +39,38 @@ export default function Members() {
                 className="h-20 w-auto mx-auto mb-6"
               />
               <h1 className="text-3xl font-bold mb-2" style={{color: '#FFFFFF'}}>
-                {showLogin ? 'Accede a tu espacio privado' : 'Crea tu cuenta'}
+                Sistema Ansteia · Piloto Lean In
               </h1>
               <p style={{color: 'rgba(255, 255, 255, 0.7)'}}>
-                Tu acceso se adapta al plan que elegiste.
+                Accede a tu espacio privado
               </p>
             </div>
 
-            {/* Login/Register Form */}
+            {/* Error Message */}
+            {error && (
+              <div className="mb-4 p-3 rounded-lg" style={{backgroundColor: 'rgba(255, 100, 100, 0.2)', border: '1px solid rgba(255, 100, 100, 0.5)'}}>
+                <p className="text-center text-sm" style={{color: '#FF6B6B'}}>{error}</p>
+              </div>
+            )}
+
+            {/* Login Form */}
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
                 <label className="block text-sm font-semibold mb-2" style={{color: '#E0E0E0'}}>
-                  Email
+                  Usuario
                 </label>
                 <input
-                  type="email"
+                  type="text"
                   required
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg"
                   style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.05)',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
                     color: '#FFFFFF'
                   }}
-                  placeholder="tu@email.com"
+                  placeholder="EMPRENDEDORA"
                 />
               </div>
 
@@ -63,13 +81,15 @@ export default function Members() {
                 <input
                   type="password"
                   required
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="w-full px-4 py-3 rounded-lg"
                   style={{
                     backgroundColor: 'rgba(255, 255, 255, 0.05)',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
                     color: '#FFFFFF'
                   }}
-                  placeholder="••••••••"
+                  placeholder="Lean-In"
                 />
               </div>
 
@@ -80,20 +100,9 @@ export default function Members() {
                 onMouseEnter={(e) => e.target.style.backgroundColor = '#3A7B7F'}
                 onMouseLeave={(e) => e.target.style.backgroundColor = '#4FA5A5'}
               >
-                {showLogin ? 'Ingresar' : 'Crear cuenta'}
+                Ingresar
               </button>
             </form>
-
-            {/* Toggle Login/Register */}
-            <div className="text-center mt-6">
-              <button
-                onClick={() => setShowLogin(!showLogin)}
-                className="text-sm"
-                style={{color: '#4FA5A5'}}
-              >
-                {showLogin ? '¿No tienes cuenta? Regístrate' : '¿Ya tienes cuenta? Inicia sesión'}
-              </button>
-            </div>
           </div>
         </div>
       </div>
